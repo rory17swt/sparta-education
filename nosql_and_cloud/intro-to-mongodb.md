@@ -319,3 +319,56 @@ db.films.deleteMany({
   title: { $in: ["Rogue One", "The NeverEnding Story"] } 
 })
 ```
+
+# Embedding vs Referencing
+
+When storing related data in MongoDB you have two options: **embedding** or **referencing**.
+
+### Embedding
+
+Embedding is when you store related data nested inside a single document.
+
+```
+{
+  name: "Rory",
+  course: "Data Engineering",
+  address: {
+    street: "123 London Road",
+    city: "London",
+    postcode: "EC1A 1BB"
+  }
+}
+```
+
+**When to use embedding:**
+- The data belongs together and is always accessed together
+- The nested data is specific to that one document and won't be shared
+- One query gets everything you need
+
+### Referencing
+
+Referencing is when you store related data in a separate document and link to it via an ID, similar to a foreign key in SQL.
+
+```
+// Student document
+{
+  name: "Rory",
+  course_id: ObjectId("abc123")
+}
+
+// Course document
+{
+  _id: ObjectId("abc123"),
+  name: "Data Engineering",
+  provider: "Sparta Global"
+}
+```
+
+**When to use referencing:**
+- Data is shared across multiple documents
+- The related data is large and not always needed
+- You want to avoid duplicating data
+
+### Summary
+
+If the data is only ever used by that one document: **embed**. If it is shared or reused across documents **reference**.
