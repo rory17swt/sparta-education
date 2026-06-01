@@ -171,3 +171,151 @@ db.students.insertOne({
 ```
 
 **Output**: `{ acknowledged: true, insertedId: ObjectId('6a1da35c9ebb8982e632d0a7') }`
+
+# Searching for Documents
+
+To search for documents in a collection we use `find()`:
+
+```
+db.films.find()
+```
+
+We can also filter results by passing in a query object:
+
+```
+db.films.find({ genre: "Sci-Fi" })
+```
+
+We can also use query operators to filter by value:
+
+```
+db.films.find({ imdb_rating: { $gt: 8.0 } })
+```
+
+Common query operators:
+- `$gt` - greater than
+- `$lt` - less than
+- `$gte` - greater than or equal to
+- `$lte` - less than or equal to
+- `$ne` - not equal to
+
+## Creating the Films Collection
+
+```
+db.createCollection("films")
+```
+
+**Validation**:
+
+```
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'title',
+      'director',
+      'genre'
+    ],
+    properties: {
+      title: {
+        bsonType: 'string'
+      },
+      director: {
+        bsonType: 'string'
+      },
+      genre: {
+        bsonType: 'string'
+      }
+    }
+  }
+}
+```
+
+### Inserting Documents
+
+Using `insertOne`:
+
+```
+db.films.insertOne({
+  title: "Dune",
+  director: "Denis Villeneuve",
+  genre: "Sci-Fi",
+  opening_date: new Date("2021-10-22"),
+  run_time: 155,
+  imdb_rating: 8.0
+})
+```
+
+Using `insertMany`:
+
+```
+db.films.insertMany([
+  {
+    title: "Rogue One",
+    director: "Gareth Edwards",
+    genre: "Sci-Fi",
+    opening_date: new Date("2016-12-16"),
+    run_time: 133,
+    imdb_rating: 7.8
+  },
+  {
+    title: "The NeverEnding Story",
+    director: "Wolfgang Petersen",
+    genre: "Fantasy",
+    opening_date: new Date("1984-04-06"),
+    run_time: 102,
+    imdb_rating: 7.4
+  }
+])
+```
+
+### Bonus: insert()
+
+`insert()` works but is deprecated - use `insertOne` or `insertMany` instead:
+
+```
+db.films.insert({ title: "Gladiator", ... })
+```
+
+**Output**:
+```
+DeprecationWarning: Collection.insert() is deprecated
+```
+
+## Updating Documents
+
+`$set` can update an existing field or add a new one.
+
+Using `updateOne`:
+
+```
+db.films.updateOne(
+  { title: "Dune" },
+  { $set: { imdb_rating: 8.5 } }
+)
+```
+
+Using `updateMany`:
+
+```
+db.films.updateMany(
+  { genre: "Sci-Fi" },
+  { $set: { in_space: true } }
+)
+```
+
+## Deleting Documents
+
+Using `deleteOne`:
+
+```
+db.films.deleteOne({ title: "Dune" })
+```
+
+Using `deleteMany` with `$in` to delete multiple specific documents:
+
+```
+db.films.deleteMany({ 
+  title: { $in: ["Rogue One", "The NeverEnding Story"] } 
+})
+```
