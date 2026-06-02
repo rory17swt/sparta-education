@@ -215,3 +215,59 @@ db.characters.distinct("species.name")
 
 `87`
 ---
+**Task 1**:
+
+Convert mass to be double data type
+
+```
+db.characters.updateMany(
+  {},
+  [{
+    $set: {
+      mass: {
+        $convert: {
+          input: "$mass",
+          to: "double",
+          onError: null
+        }
+      }
+    }
+  }]
+)
+```
+```
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 87,
+  modifiedCount: 82,
+  upsertedCount: 0
+}
+```
+---
+
+**Task 2**: 
+
+Find the maximum height per homeworld
+
+```
+db.characters.aggregate([
+  {
+    $group: {
+      _id: "$homeworld.name",
+      maxHeight: { $max: "$height" }
+    }
+  }
+])
+```
+```
+{
+  _id: 'Stewjon',
+  maxHeight: 182
+}
+{
+  _id: 'Dorin',
+  maxHeight: 188
+}
+// etc
+```
