@@ -2,6 +2,8 @@
 
 ## What is Cloud Computing
 
+![Cloud Computing Diagram](images/cloud_computing_diagram.png)
+
 Cloud computing is the on-demand delivery of computing resources:
 - Servers
 - Storage
@@ -12,9 +14,9 @@ Cloud computing is the on-demand delivery of computing resources:
 
 All over the internet with pay-as-you-go pricing
 
-Rather than owning and maintaining physical hardware, organisations access these resources emotely via a provider's data centres. You pay only for what you use, scaling up or down as needed.
+Rather than owning and maintaining physical hardware, organisations access these resources remotely via a provider's data centres. You pay only for what you use, scaling up or down as needed.
 
-### What Makes Somthing "Cloud"
+### What Makes Something "Cloud"
 
 - **On-demand-self-service**: Resources can be provisioned without human interaction from the provider
 - **Broad network access**: Available over the internet from any device
@@ -24,19 +26,15 @@ Rather than owning and maintaining physical hardware, organisations access these
 
 ## What are Data Centres
 
-A data centre is a physical facility that houses the computing infrastructure for cloud services. It can have thousands of servers, networking equipment and cooling systems. It's all enginerred for reliability, security and scale.
+A data centre is a physical facility that houses the computing infrastructure for cloud services. It can have thousands of servers, networking equipment and cooling systems. It's all engineered for reliability, security and scale.
+
+### Google Data Centre
+![Google Data Centre](images/data_centre_photo.png)
 
 ### What's Inside a Data Centre
 
 | Component | Purpose |
 |---|---|
-| **Servers** | Compute workloads — running applications and processing data |
-| **Storage arrays** | Persisting data at scale (SSDs, HDDs, NVMe) |
-| **Network switches & routers** | Moving data between servers and to/from the internet |
-| **Cooling systems** | Preventing hardware from overheating (air/liquid cooling) |
-| **Redundant power (UPS/generators)** | Ensuring uptime even during power failures |
-| **Physical security** | Biometric access, CCTV, security personnel || Component | Purpose |
-|
 | **Servers** | Compute workloads — running applications and processing data |
 | **Storage arrays** | Persisting data at scale (SSDs, HDDs, NVMe) |
 | **Network switches & routers** | Moving data between servers and to/from the internet |
@@ -52,18 +50,18 @@ An inside look at a real commercial data centre in Chicago. Covers physical layo
 
 ## How Do You Know if Something is Running in the Cloud
 
-There's no single way to tell if something if runnig in the cloud, but there are some clear signs to look out for:
+There's no single way to tell if something is running in the cloud, but there are some clear signs to look out for:
 
 - The service is accessed over the internet via a URL or API. No local installation required
-- The doamin
+- The domain:
     - *.amazonaws.com*
     - *.azurewebsites.net*
     - *.cloud.google.com
-- Your billed based on usage rather than buying hardware
+- You're billed based on usage rather than buying hardware
     - Compute hours
-    - storage
+    - Storage
     - API calls
-- It scales automatically in response to load. This not possible with fixed on-premises hardware 
+- It can handle more users or data automatically without anyone buying new hardware
 
 ### Real-World Examples
 
@@ -117,6 +115,9 @@ This is distinct from hybrid cloud, which mixes public and private. Multi-cloud 
 - **Why use it**: Avoids being tied to one provider, lets you pick the best service for each job, and improves reliability
 - **Cons:** Added operational complexity, it requires strong governance and cost management
 
+### Cloud Deployment Model
+![Cloud Deployment Models](images/cloud_deployment_models.png)
+
 ## What are Three Main Types of "Cloud Services"
 
 Cloud services are typically categorised into three delivery models. The further down the stack you go, the more the provider manages for you.
@@ -134,6 +135,10 @@ The provider manages the underlying infrastructure and OS. You focus on building
 
 - **Examples:** Heroku, Google App Engine, Azure App Service
 - **Best for:** Developers who want to focus on code, not infrastructure
+
+
+### The Three Cloud Service Models
+![IaaS PaaS SaaS](images/IaaS_PaaS_SaaS.png)
 
 ### SaaS - Software as a Service
 
@@ -172,7 +177,7 @@ Deeply integrating with one provider's services makes it difficult and costly to
 
 ### Unpredictable Costs
 
-Pay-as-you-go billing is an advantage until it isn't. Without careful management, cloud costs can increase quickly. Forgotten services running in the cloud, paying for more stroage than you need, or unexpected data transfer fees can result in surprisingly large bills. This is very common.
+Pay-as-you-go billing is an advantage until it isn't. Without careful management, cloud costs can increase quickly. Forgotten services running in the cloud, paying for more storage than you need, or unexpected data transfer fees can result in surprisingly large bills. This is very common.
 
 ### Compliance and Regulatory Risk
 
@@ -221,12 +226,7 @@ Launched in 2008, built on the same infrastructure that powers Google Search, Yo
 
 ## Current Cloud Computing Market Share (2026)
 
-| Provider | Market Share | YoY Revenue Growth |
-|---|---|---|
-| **AWS** | 30% | 20% |
-| **Microsoft Azure** | 23% | 40% |
-| **Google Cloud (GCP)** | 13% | 28% |
-| **Others** (Alibaba, Oracle, etc.) | 34% | Varies |
+![Current Cloud Computing Market Share (2026)](images/cloud_market_share_2026.png)
 
 ### Key Facts (2026)
 
@@ -265,7 +265,7 @@ As a data engineer, these are the core managed services you'll encounter across 
 | Service | Provider | Purpose |
 |---|---|---|
 | **Amazon S3** | AWS | Industry-standard object storage, where most AWS data is stored and built upon |
-| **Azure Data Lake Storage (ADLS)** | Azure | Object storage optimised for analytics workloads |
+| **Azure Data Lake Storage (ADLS)** | Azure | Microsoft's version of S3, optimised for analytics workloads |
 | **Google Cloud Storage (GCS)** | GCP | Object storage used as the foundation for GCP data pipelines |
 
 ### Data Warehouses
@@ -294,7 +294,7 @@ As a data engineer, these are the core managed services you'll encounter across 
 | **Azure Event Hubs** | Azure | High-throughput event streaming |
 | **Google Pub/Sub** | GCP | Asynchronous messaging and event-driven pipelines |
 
-## Cloud Certifications you can target as a Data Professionals
+## Cloud Certifications you can target as a Data Professional
 
 ### Entry-Level / Foundational
 
