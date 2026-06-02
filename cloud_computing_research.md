@@ -72,3 +72,88 @@ There's no single way to tell if something if runnig in the cloud, but there are
 - LinkedIn - runs on Azure
 - Spotify - uses Google Cloud for data processing
 
+## What are the Main 2 "Cloud Deployment" Models
+
+Cloud deployment models define where infrastructure runs, who owns it, and who can access it.
+
+### Public Cloud
+
+Infrastructure is owned and operated by a third-party provider and delivered over the internet:
+
+- AWS
+- Azure
+- Google Cloud
+
+Resources are shared across multiple customers on the same physical hardware, though logically isolated.
+
+### Private Cloud
+
+Infrastructure dedicated exclusively to a single organisation. It may be hosted on-premises or by a third-party, but it is not shared with other customers.
+
+- **Best for:** Organisations with strict regulatory requirements
+    - Finance
+    - Defence
+    - Healthcare
+
+- **Pros:** Maximum control, enhanced security, full customisation
+- **Cons:** Expensive to build and maintain and limited elasticity compared to public cloud
+
+## What are the 2 More Complex "Cloud Deployment" Models
+
+### Hybrid Cloud
+
+A hybrid cloud combines public and private cloud environments, connected by technology that allows workloads and data to move between them. Organisations can keep sensitive data on a private cloud while leveraging the scalability of the public cloud for less sensitive tasks.
+
+**Example**:
+
+A retail bank stores customer financial records in a private cloud for compliance, but uses AWS to run its customer-facing mobile app and handle peak demand.
+
+### Multi-Cloud
+
+A multi-cloud strategy uses services from two or more different cloud providers simultaneously. For example, using AWS for compute, Google Cloud for machine learning, and Azure for enterprise integrations.
+
+This is distinct from hybrid cloud, which mixes public and private. Multi-cloud mixes multiple public providers.
+
+- **Why use it**: Avoids being tied to one provider, lets you pick the best service for each job, and improves reliability
+- **Cons:** Added operational complexity, it requires strong governance and cost management
+
+## What are Three Main Types of "Cloud Services"
+
+Cloud services are typically categorised into three delivery models. The further down the stack you go, the more the provider manages for you.
+
+### IaaS - Infrastructure as a Service
+
+You rent raw computing infrastructure: virtual machines, storage, and networking. You manage the OS, middleware and applications. This is the closest cloud equivalent to owning your own servers.
+
+- **Examples:** AWS EC2, Azure Virtual Machines, Google Compute Engine
+- **Best for:** Teams that need full control over their stack
+
+### PaaS - Platform as a Service
+
+The provider manages the underlying infrastructure and OS. You focus on building and deploying applications. It's like renting a fully equipped kitchen, you bring the recipe, not the equipment.
+
+- **Examples:** Heroku, Google App Engine, Azure App Service
+- **Best for:** Developers who want to focus on code, not infrastructure
+
+### SaaS - Software as a Service
+
+The provider delivers a fully managed software application over the internet. No installation, no maintenance. This is the cloud model most people interact with daily.
+
+- **Examples:** Gmail, Salesforce, Slack, Microsoft 365, Zoom, Dropbox
+- **Best for:** End users and businesses that want ready-to-use software without managing anything
+
+## Advantages of Cloud Computing for a Business
+
+### Cost Efficiency
+
+Traditional IT requires large upfront costs like buying servers, networking equipment, and data centre space. Cloud converts this into a monthly bill based on actual usage. No upfront hardware investment and no cost for wasted resources.
+
+### Scalability
+
+Resources can be scaled up or down, or automatically in response to demand. A retailer can handle spikes without maintaining peak-capacity hardware all year.
+
+### Global Reach
+
+Cloud providers operate data centres across every major region. Businesses can deploy applications globally very quickly, this would previously require years of investment.
+
+## Potential Disadvantages or Pitfalls for a Business
