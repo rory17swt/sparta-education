@@ -34,3 +34,5 @@ for man in db.characters.find({"gender": "male"}).limit(3):
 # 4 All Humans from Alderaan
 for human in db.characters.find({"species.name": "Human", "homeworld.name": "Alderaan"}):
     print(human["name"])
+
+    nosql_and_cloud\pymongo\testing_pymongo.py

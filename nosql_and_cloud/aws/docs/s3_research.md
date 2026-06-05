@@ -53,3 +53,17 @@ The less frequently you access the data, the cheaper the storage, but the longer
 - **Storage**: charged per GB stored per month
 
 > AWS makes it cheap to get data in, but charges for data leaving their infrastructure. This is a common pattern across AWS services.
+
+## What is an endpoint
+
+An endpoint is a URL that points to a specific resource, it's the address you send a request to in order to access something. In AWS, endpoints are the URLs used to interact with services.
+
+## Why is S3 good for creating endpoints
+
+Every object you upload to S3 automatically gets a publicly accessible URL in this format:
+
+```
+https://<bucket-name>.s3.<region>.amazonaws.com/<object-key>
+```
+
+This means you can upload an image once and immediately reference it anywhere in a `<img src="">` tag, an API response and a mobile app with no server required. No Express route (Node.js web framework), no file-serving logic, just a URL that works. That's why S3 is commonly used to host static assets like images, videos, and downloadable files.
