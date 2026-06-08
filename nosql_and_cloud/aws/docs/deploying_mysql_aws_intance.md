@@ -1,7 +1,5 @@
 # Deploying MySQL on an EC2 Instance (Ubuntu)
 
-
-
 ## 1. Launch an EC2 Instance
 
 1. Go to **EC2 / Launch Instance** in the AWS Console
